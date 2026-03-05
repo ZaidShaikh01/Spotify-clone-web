@@ -97,13 +97,14 @@ img{
 }
 /* Main section */
 .main{
-    margin: 5rem 1rem;
+    
+    margin: 5rem 1rem 1rem;
     
 }
 .main__container{
     display: flex;
     gap:0.5rem;
-    height: 85vh;
+    height: 80vh;
 }
 .main__left{
     display: flex;
@@ -217,4 +218,38 @@ background: rgba(255 , 255, 255, 0.3);
 }
 .main__right-list::-webkit-scrollbar{
     width: 1px;
+}
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 1.3rem;
+}
+.footer__cover{
+    width: 3rem;
+}
+.footer__cover img{
+    border-radius: 5px;
+}
+.footer__left{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.footer__description .footer__song-title{
+    font-size: 0.8rem;
+}
+.footer__description .footer__song-artist{
+    color: var(--text-color);
+    font-size: 0.7rem;
+}
+.footer__center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer__player-list{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
