@@ -20,7 +20,12 @@ body{
 }
 a{
     text-decoration: none;
-    color: var(--button-background);
+    color: var(--black);
+    background-color: var(--button-background);
+    padding: 0.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+
 }
 ul{
     list-style:none;
@@ -50,9 +55,11 @@ img{
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: space-around;
 }
 .navbar__logo i{
   color: var(--button-background);
+  
   
 }
 .navbar__left{
@@ -63,17 +70,28 @@ img{
 .navbar__text{
     color: var(--text-color);
 }
-.navbar__left .navbar__home{
+.navbar__left .navbar__home,
+.navbar__right .navbar__user-icon{
     text-align: center;
     padding: 0.5rem;
     background-color: var(--grey);
     border-radius: 100%;
 }
 .navbar .navbar__search{
- display: flex;
- gap: 1rem;
- align-items: center;
- background-color: var(--grey);
- border-radius: 2rem;
- padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: var(--grey);
+    border-radius: 2rem;
+    padding: 1rem;
+   
+    
+}
+
+.navbar .navbar__right{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: right;
+   
 }
