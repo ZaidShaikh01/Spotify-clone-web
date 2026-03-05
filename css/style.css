@@ -206,3 +206,15 @@ img{
     font-size: 0.8rem;
     color: var(--text-color);
 }
+.main__right::-webkit-scrollbar {
+    width: 10px;    
+}
+/* Handle */
+.main__right::-webkit-scrollbar-thumb{
+background: rgba(255 , 255, 255, 0.3);
+
+/* border-radius: 5px; */
+}
+.main__right-list::-webkit-scrollbar{
+    width: 1px;
+}
