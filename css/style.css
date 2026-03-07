@@ -319,3 +319,115 @@ background: rgba(255 , 255, 255, 0.3);
     cursor: pointer;
     box-shadow: -400px 0 0 400px #fff;
 }
+
+
+
+/* Media queries  */
+@media(max-width: 1200px){
+.music-player-progress-bar{
+    width: 27rem;
+}
+.music-player-volume-progress-bar{
+    width: 10rem;
+}
+}
+
+@media(max-width:992px){
+    .sidebar{
+        width: 18rem;
+    }
+.music-player-progress-bar{
+    width: 25rem;
+}
+.music-player-volume-progress-bar{
+    width: 8rem;
+}
+
+.music-player-song-details .music-player-song-title{
+    font-size: 0.7rem;
+}
+.music-player-song-details .music-player-song-artist{
+    color: var(--text-color);
+    font-size: 0.6rem;
+}
+.music-player-song-cover{
+    width: 2rem;
+}
+}
+@media(max-width:768px){
+    .sidebar{
+        width: 16rem;
+        display:none;
+    }
+.music-player-progress-bar{
+    width: 15rem;
+}
+.music-player-volume-progress-bar{
+    width: 5rem;
+}
+
+.music-player-song-details .music-player-song-title{
+    font-size: 0.6rem;
+}
+.music-player-song-details .music-player-song-artist{
+    color: var(--text-color);
+    font-size: 0.5rem;
+}
+.music-player-song-cover{
+    width: 3rem;
+}
+.header .header-actions{
+    gap: 0.2rem;
+}
+.header-navigation{
+    gap: 0.4rem;
+}
+.header .header-search-bar{
+    gap: 0.1rem;
+}
+.header-explore-btn{
+display: none;
+}
+.music-player-song-details{
+    display: none;
+}
+}
+@media(max-width:576px){
+
+.music-player-volume-container{
+    display: none;
+}
+.header-navigation .header-home-button{
+    display: none;
+}
+.header .header-search-bar{
+    padding: 0.6rem;
+    font-size: 0.8rem;
+}
+.music-player-song-cover{
+    width: 2rem;
+}
+
+}
+
+@media (max-width: 380px) {
+  /* Styles for very small phones */
+  .music-player-song-cover{
+    display: none;
+  }
+  .header .header-search-bar{
+    padding: 0.6rem;
+    font-size: 0.7rem;
+  }
+  
+  .header-brand-logo{
+    display: none;
+  }
+  .music-player-progress-bar{
+    width: 13rem;
+}
+.music-player-volume-controls{
+    display: none;
+}
+}
+
