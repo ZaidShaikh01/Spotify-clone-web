@@ -335,7 +335,46 @@ background: rgba(255 , 255, 255, 0.3);
     box-shadow: -400px 0 0 400px #fff;
 }
 
+/* Liked song page */
 
+
+.like-content-area{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 2;
+    background: #20173D;
+background: linear-gradient(182deg,rgba(32, 23, 61, 1) 0%, rgba(18, 18, 18, 1) 100%);
+    /* padding: 2rem 2rem; */
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+.like-content-area-hero{
+    display: flex;
+    gap: 2rem;
+    align-items: end;
+    width: 100%;
+    padding: 2rem 2rem;
+    background: #513AE9;
+background: linear-gradient(182deg,rgba(81, 58, 233, 1) 0%, rgba(43, 31, 83, 1) 100%);
+    
+}
+
+.like-content-area-hero-cover img{
+    max-width: 13rem;
+    min-width: 13rem;
+    border-radius: 4px;
+}
+.like-content-area-hero-playlist-name{
+    font-size: 5rem;
+    font-weight: 900;
+}
+.like-content-area-playlist-creator{
+    font-weight: 700;
+}
+.like-content-area-playlist-detail{
+    color: var(--text-color);
+}
 
 /* Media queries  */
 @media(max-width: 1200px){
