@@ -140,6 +140,7 @@ img{
     gap: 1rem;
 
 }
+
 .main-search-right{
     color: var(--text-color);
 }
@@ -163,6 +164,8 @@ img{
 
 .sidebar-playlist-cover{
     width: 3rem;
+    margin: 0.3rem 0.2rem 0.2rem;
+    
 }
 .sidebar-playlist-cover img{
     border-radius: 5px;
@@ -170,15 +173,50 @@ img{
 .sidebar-playlist-item{
     display: flex;
     gap: 1rem;
+    text-decoration: none;
+    /* color: var(--text-color); */
+    background-color: transparent;
+    padding: 0.2rem 0.2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    align-items: center;
+    position: relative;
+    transition: all 0.2s ease;
+}
+.sidebar-playlist-item-overlay{
+    display: none;
+    position: absolute;
+    top: 13%;
+    left: 12px;
+    color: white;
+    padding: 10px;
+    z-index: 100;
+    
 }
 .sidebar-playlist-item:nth-child(4) img,
 .sidebar-playlist-item:nth-child(5) img{
     border-radius: 50%;
     
 }
+.sidebar-playlist-item:hover{
+    /* display: block; */
+    background-color: var(--grey);
+    opacity: 0.9;
+    cursor: pointer;
+}
+.sidebar-playlist-item:hover .sidebar-playlist-cover{
+    opacity: 0.5;
+}
+
+.sidebar-playlist-item:hover .sidebar-playlist-item-overlay{
+    display: block;
+}
+
+
 .sidebar-playlist-title{
     font-weight: 500;
     font-size: 0.9rem;
+    color: white;
 }
 
 .sidebar-playlist-type{
@@ -208,10 +246,33 @@ img{
     gap: 4rem;
 }
 
+
 .content-area-music-card{
     max-width: 9rem;
     min-width: 9rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
     
+}
+.content-area-music-overlay{
+    display: none;
+    position: absolute;
+    top: 72%;
+    left: 75px;
+    padding: 10px;
+    z-index: 100;
+    
+}
+.content-area-music-card:hover{
+    background-color: var(--grey);
+    opacity: 0.9;
+    cursor: pointer;
+    
+}
+.content-area-music-card:hover .content-area-music-overlay{
+    display: block;
 }
 .content-area-music-cover img{
     border-radius: 9px;
@@ -246,6 +307,7 @@ background: rgba(255 , 255, 255, 0.3);
     align-items: center;
     margin: 0rem 1.3rem;
 }
+
 .music-player-song-cover{
     width: 3rem;
 }
