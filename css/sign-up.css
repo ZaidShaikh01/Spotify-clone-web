@@ -111,6 +111,7 @@ a{
     color: var(--text-color);
 }
 .hero-body-sign-up-login-link{
+    /* margin-top: 2rem; */
     display: flex;
     flex-direction: column;
     
