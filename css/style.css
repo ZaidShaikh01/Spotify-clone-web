@@ -465,11 +465,11 @@ background: linear-gradient(182deg,rgba(81, 58, 233, 1) 0%, rgba(43, 31, 83, 1) 
     padding: 2rem 2rem;
 }
 .like-content-area-table {
-            width: 100%;
-            border-collapse: collapse; 
-            font-family: inherit;
-            padding: 2rem 2rem;
-        }
+    width: 100%;
+    border-collapse: collapse; 
+    font-family: inherit;
+    padding: 2rem 2rem;
+}
 .like-content-area-table-head{
     background-color: transparent;
     color: var(--text-color);
@@ -541,7 +541,7 @@ background: rgba(255 , 255, 255, 0.3);
 
 /* Hover effect */
 tr:hover {
-    background-color: #ddd;
+    opacity: 0.8;
 }
 
 /* Media queries  */
