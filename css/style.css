@@ -254,7 +254,12 @@ img{
     border-radius: 10px;
     position: relative;
     transition: all 0.2s ease-in-out;
+    /* text-decoration: none; */
+    background-color: transparent;
     
+}
+.content-area-music-title{
+    color: var(--button-background);
 }
 .content-area-music-overlay{
     display: none;
@@ -397,10 +402,10 @@ background: rgba(255 , 255, 255, 0.3);
     box-shadow: -400px 0 0 400px #fff;
 }
 
-/* Liked song page */
 
 
-.like-content-area{
+/* Playlist */
+.playlist-content-area{
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -411,7 +416,7 @@ background: linear-gradient(182deg,rgba(32, 23, 61, 1) 0%, rgba(18, 18, 18, 1) 1
     border-radius: 10px;
     overflow-y: scroll;
 }
-.like-content-area-hero{
+.playlist-content-area-hero{
     display: flex;
     gap: 2rem;
     align-items: end;
@@ -421,56 +426,63 @@ background: linear-gradient(182deg,rgba(32, 23, 61, 1) 0%, rgba(18, 18, 18, 1) 1
 background: linear-gradient(182deg,rgba(81, 58, 233, 1) 0%, rgba(43, 31, 83, 1) 100%);
     
 }
-
-.like-content-area-hero-cover img{
+.playlist-content-area-hero.aashique{
+background: #3D8282;
+background: linear-gradient(182deg,rgba(61, 130, 130, 1) 0%, rgba(0, 60, 61, 1) 100%);
+}
+.playlist-content-area.aashique{
+    background: #062D2D;
+background: linear-gradient(182deg,rgba(6, 45, 45, 1) 0%, rgba(18, 18, 18, 1) 100%);
+}
+.playlist-content-area-hero-cover img{
     max-width: 13rem;
     min-width: 13rem;
     border-radius: 4px;
 }
-.like-content-area-hero-playlist-name{
+.playlist-content-area-hero-playlist-name{
     font-size: 5rem;
     font-weight: 900;
 }
-.like-content-area-playlist-creator{
+.playlist-content-area-playlist-creator{
     font-weight: 700;
 }
-.like-content-area-playlist-detail{
+.playlist-content-area-playlist-detail{
     color: var(--text-color);
 }
 /* Content area actions */
-.like-content-area-actions{
+.playlist-content-area-actions{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
     padding: 2rem 2rem;
 }
-.like-content-area-actions-left{
+.playlist-content-area-actions-left{
     display: flex;
     align-items: center;
     gap: 2rem;
 }
-.like-content-area-actions-right{
+.playlist-content-area-actions-right{
     display: flex;
     gap: 1rem;
     align-items: center;
     
 }
-.like-content-area-actions-right-span{
+.playlist-content-area-actions-right-span{
     color: var(--text-color);
     font-size: 1.2rem;
     
 }
-.like-content-area-table-container{
+.playlist-content-area-table-container{
     padding: 2rem 2rem;
 }
-.like-content-area-table {
+.playlist-content-area-table {
     width: 100%;
     border-collapse: collapse; 
     font-family: inherit;
     padding: 2rem 2rem;
 }
-.like-content-area-table-head{
+.playlist-content-area-table-head{
     background-color: transparent;
     color: var(--text-color);
     
@@ -479,63 +491,67 @@ background: linear-gradient(182deg,rgba(81, 58, 233, 1) 0%, rgba(43, 31, 83, 1) 
 
     border-bottom:1px solid var(--text-color);
 }
-.like-content-area-table-head th{
+.playlist-content-area-table-head th{
     font-weight: 400;
     font-size: 0.8rem;
     text-align: start;
 }
-.like-content-area-table-song-cover{
+.playlist-content-area-table-song-cover{
     width: 3rem;
 }
-.like-content-area-table-song-title{
+.playlist-content-area-table-song-title{
     display: flex;
     gap: 1rem;
 }
-.like-content-area-table-song-artist{
+.playlist-content-area-table-song-artist{
     color: var(--text-color);
     font-size: 0.8rem;
 }
-.like-content-area-table-album-name{
+.playlist-content-area-table-album-name{
     color: var(--text-color);
 }
-.like-content-area-table-Date,
-.like-content-area-table-time{
+.playlist-content-area-table-Date,
+.playlist-content-area-table-time{
     color: var(--text-color);
     font-size: 0.9rem;
 }
 
-/* Like-content-area-Links */
-.like-content-area-links-container{
+/* Playlist-content-area-Links */
+.playlist-content-area-links-container{
     border-top: 1px solid var(--text-color);
     border-bottom: 1px solid var(--text-color);
     margin: 2rem;
     padding: 4rem 0;
 }
-.like-content-area-links-list{
+.playlist-content-area-links-list{
     display: flex;
     justify-content: space-between;
 }
-.like-content-area-links-item{
+.playlist-content-area-links-item{
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
     color: var(--text-color);
     font-size: 0.9rem;
 }
-.like-content-area-links-item-heading{
+.playlist-content-area-links-item-heading{
     color: white;
     font-weight: 600;
 }
-.like-content-area-links-item:nth-child(5){
+.playlist-content-area-links-item:nth-child(5){
     flex-direction: row;
 }
-.like-content-area::-webkit-scrollbar {
+.playlist-content-area::-webkit-scrollbar {
     width: 10px;    
 }
 
-.like-content-area::-webkit-scrollbar-thumb{
+.playlist-content-area::-webkit-scrollbar-thumb{
 background: rgba(255 , 255, 255, 0.3);
 
+}
+
+.content-area-music-sections.playlist{
+    padding: 1rem;
 }
 
 
