@@ -13,6 +13,7 @@
   --button-background: #f0f0f0;
   --text-color: #a8a8a8;
 }
+
 html,
 body {
   font-family: 'Poppins', sans-serif;
@@ -29,9 +30,11 @@ a {
   border-radius: 50px;
   font-weight: 600;
 }
+
 ul {
   list-style: none;
 }
+
 img {
   max-width: 100%;
 }
