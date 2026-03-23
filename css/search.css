@@ -63,23 +63,67 @@ img {
 
 }
 
-.header-search-placeholder {
-  color: var(--text-color);
-}
 
-.header .header-search-bar {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  background-color: var(--grey);
-  border-radius: 2rem;
-  padding: 1rem 1rem;
-}
+
+
 .search-container{
   display: flex;
   align-items: center;
   justify-content: center;
   align-self: center;
   flex-direction: column;
-  margin: 20rem ;
+  margin: 15rem 20rem;
+  /* width: 100%; */
+  /* background-color: white; */
+}
+.search-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-family: inherit;
+  padding: 2rem 2rem;
+  /* background-color: white; */
+  border: 1px solid var(--text-color);
+}
+.search-table-head{
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--text-color);
+}
+.search-table-head th {
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid var(--text-color); 
+}
+.search-body td{
+  text-align: center;
+  border-left: 1px solid var(--text-color); 
+  /* color: var(--text-color); */
+
+}
+
+/* TODO? Convert search bar into input text fild */
+
+.header-navigation{
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: var(--grey);
+  font-family: inherit;
+}
+.header-input{
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  outline: none;
+  color: var(--text-color);
+}
+
+@media (max-width: 992px) {
+.search-container{
+  margin: 15rem 10rem;
+}
 }
