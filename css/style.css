@@ -86,6 +86,10 @@ img {
   background-color: var(--grey);
   border-radius: 2rem;
   padding: 0px 1rem;
+  font-weight: 400;
+}
+.header .header-search-bar i{
+  color: white;
 }
 
 .header .header-actions {
