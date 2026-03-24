@@ -1,5 +1,5 @@
 /*
-
+TODO: Implement Local Storage search function
 Logic for implementing the local storage
 
 1. Retrive all the elements from local storage (Done)
@@ -32,6 +32,7 @@ localStorage.setItem('Ae Dil Hai Mushkil', 'Arijit Singh');
 localStorage.setItem('Galliyan', 'Ankit Tiwari');
 localStorage.setItem('Dil Diyan Gallan', 'Atif Aslam');
 
+// List all songs in first try
 document.addEventListener(
   'DOMContentLoaded',
   function () {
@@ -40,13 +41,7 @@ document.addEventListener(
   { once: true },
 );
 
-const inputField = document.querySelector('.header-input');
-
-inputField.addEventListener('input', function () {
-  search(inputField.value);
-  console.log(inputField.value);
-});
-
+// Adding new table element
 function createNewTableItem(song, author) {
   const tr = document.createElement('tr');
   const tdSong = document.createElement('td');
@@ -56,9 +51,11 @@ function createNewTableItem(song, author) {
   tr.append(tdSong, tdAuthor);
   document.querySelector('.search-body').appendChild(tr);
 }
+// removing all entries
 function removeAllEntries() {
   document.querySelector('.search-body').innerHTML = '';
 }
+// to show all entries at the start
 function showAllEntries() {
   for (let i = 0; i < localStorage.length; i++) {
     const songName = localStorage.key(i);
@@ -70,6 +67,7 @@ function showAllEntries() {
     createNewTableItem(songName, author);
   }
 }
+// serach function
 function search(inputValue) {
   removeAllEntries();
 
@@ -88,3 +86,23 @@ function search(inputValue) {
     }
   }
 }
+
+// UI animation
+const searchBarInput = document.querySelector('.header-input');
+const searchBar = document.querySelector('.header-navigation');
+
+function onFocus() {
+  searchBar.style.border = '1px solid #f0f0f0';
+}
+function onBlur() {
+  searchBar.style.border = 'none';
+}
+
+searchBarInput.addEventListener('focus', onFocus);
+searchBarInput.addEventListener('blur', onBlur);
+const inputField = document.querySelector('.header-input');
+
+inputField.addEventListener('input', function () {
+  search(inputField.value);
+  console.log(inputField.value);
+});
