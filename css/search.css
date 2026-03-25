@@ -68,6 +68,26 @@ img {
 
 }
 
+.header-theme-toggle {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  text-align: center;
+  padding: 0.8rem;
+  background-color: var(--grey);
+  border-radius: 100%;
+}
+.header-theme-toggle {
+  border: none;
+  cursor: pointer;
+}
+
+.header-theme-svg {
+  transition: all 0.5s ease;
+}
+.header-theme-svg:hover {
+  transform: rotate(90deg);
+}
 
 
 .search-container{
