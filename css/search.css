@@ -13,6 +13,13 @@
   --button-background: #f0f0f0;
   --text-color: #a8a8a8;
 }
+[data-theme='light'] {
+  --background-dark: #1a1a2e;
+  --black: #f0f0f0;
+  --grey: #4a6fa5;
+  --button-background: #1abc9c;
+  /* Sun icon for light mode toggle */
+}
 
 html,
 body {
@@ -60,12 +67,9 @@ img {
   gap: 3rem;
   align-items: center;
   justify-content: center;
-
 }
-.header-brand-logo{
-
+.header-brand-logo {
   background-color: transparent;
-
 }
 
 .header-theme-toggle {
@@ -89,8 +93,7 @@ img {
   transform: rotate(90deg);
 }
 
-
-.search-container{
+.search-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +103,7 @@ img {
   /* width: 100%; */
   /* background-color: white; */
 }
-.search-table{
+.search-table {
   width: 100%;
   border-collapse: collapse;
   font-family: inherit;
@@ -108,7 +111,7 @@ img {
   /* background-color: white; */
   border: 1px solid var(--text-color);
 }
-.search-table-head{
+.search-table-head {
   background-color: transparent;
   color: var(--text-color);
   padding: 0.8rem;
@@ -118,18 +121,17 @@ img {
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
-  border: 1px solid var(--text-color); 
+  border: 1px solid var(--text-color);
 }
-.search-body td{
+.search-body td {
   text-align: center;
-  border-left: 1px solid var(--text-color); 
+  border-left: 1px solid var(--text-color);
   /* color: var(--text-color); */
-
 }
 
 /* TODO? Convert search bar into input text fild */
 
-.header-navigation{
+.header-navigation {
   display: flex;
   gap: 1rem;
   padding: 1.2rem;
@@ -138,7 +140,7 @@ img {
   background-color: var(--grey);
   font-family: inherit;
 }
-.header-input{
+.header-input {
   background-color: transparent;
   border: none;
   font-family: inherit;
@@ -147,7 +149,7 @@ img {
 }
 
 @media (max-width: 992px) {
-.search-container{
-  margin: 15rem 10rem;
-}
+  .search-container {
+    margin: 15rem 10rem;
+  }
 }

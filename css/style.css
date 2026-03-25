@@ -12,7 +12,14 @@
   --grey: #1f1f1f;
   --button-background: #f0f0f0;
   --text-color: #a8a8a8;
-  
+}
+
+[data-theme="light"] {
+  --background-dark: #1a1a2e;
+  --black: #f0f0f0;
+  --grey: #4a6fa5;
+  --button-background: #1abc9c;
+   /* Sun icon for light mode toggle */
 }
 
 html,
@@ -23,6 +30,7 @@ body {
   color: var(--button-background);
   scroll-behavior: smooth;
 }
+
 a {
   text-decoration: none;
   color: var(--black);
