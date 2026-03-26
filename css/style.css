@@ -17,9 +17,9 @@
 }
 
 [data-theme='light'] {
-  --black: #fdfffc;
-  --background-dark: #f1faee;
-  --grey: #f1faee;
+  --black: #caf0f8;
+  --background-dark: #90e0ef;
+  --grey: #d4a373;
   --button-background: #e63946;
 
   --text-color: #000;
@@ -85,6 +85,7 @@ img {
 }
 .header-navigation .header-home-button,
 .header-actions .header-user-profile,
+
 .header-theme-toggle {
   display: flex;
   align-items: baseline;
@@ -93,6 +94,9 @@ img {
   padding: 0.8rem;
   background-color: var(--grey);
   border-radius: 100%;
+}
+.header-brand-logo{
+  padding: 0.5rem;
 }
 .header-theme-toggle {
   border: none;
@@ -118,6 +122,7 @@ img {
 .header .header-search-bar i {
   color: white;
 }
+
 
 .header .header-actions {
   display: flex;
@@ -421,16 +426,19 @@ img {
   border-radius: 2rem;
   overflow: hidden;
 }
+.music-player-controls-list:nth-child(3){
+  color: black;
+}
 
 .music-player-progress-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 0.3rem;
   width: 0.3rem;
   border-radius: 50%;
-  background: #fff;
+  background: var(--title);
   outline: none;
   cursor: pointer;
-  box-shadow: -400px 0 0 400px #fff;
+  box-shadow: -400px 0 0 400px var(--title);
 }
 .music-player-volume-progress-bar {
   appearance: none;
@@ -445,10 +453,10 @@ img {
   height: 0.3rem;
   width: 0.3rem;
   border-radius: 50%;
-  background: #fff;
+  background: var(--title);
   outline: none;
   cursor: pointer;
-  box-shadow: -400px 0 0 400px #fff;
+  box-shadow: -400px 0 0 400px var(--title);
 }
 
 /* Playlist */
@@ -682,6 +690,7 @@ tr:hover {
     gap: 0.1rem;
   }
   .header-explore-btn {
+    
     display: none;
   }
   .music-player-song-details {
