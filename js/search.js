@@ -35,6 +35,11 @@ localStorage.setItem('Dil Diyan Gallan', 'Atif Aslam');
 const toggleButton = document.querySelector('.header-theme-toggle');
 const icon = document.querySelector('.header-theme-svg');
 const headerLogo = document.querySelector('.header-logo-svg');
+
+// UI animation
+const searchBarInput = document.querySelector('.header-input');
+const searchBar = document.querySelector('.header-navigation');
+
 // List all songs in first try
 document.addEventListener(
   'DOMContentLoaded',
@@ -64,7 +69,7 @@ function showAllEntries() {
     const songName = localStorage.key(i);
     const author = localStorage.getItem(songName);
 
-    if (songName.includes('@gmail.com')) {
+    if (songName.includes('@gmail.com') || songName === 'theme') {
       continue;
     }
     createNewTableItem(songName, author);
@@ -93,7 +98,7 @@ function search(inputValue) {
     console.log(inputValue);
     console.log(songName);
 
-    if (songName.includes('@gmail.com')) {
+    if (songName.includes('@gmail.com') || songName === 'theme') {
       // console.log(songName);
       continue;
     }
@@ -125,10 +130,6 @@ function toggleIcons() {
   }
 }
 
-// UI animation
-const searchBarInput = document.querySelector('.header-input');
-const searchBar = document.querySelector('.header-navigation');
-
 function onFocus() {
   searchBar.style.border = '1px solid #f0f0f0';
 }
@@ -159,7 +160,6 @@ function toggleTheme() {
 
 toggleButton.addEventListener('click', () => {
   toggleTheme();
-
   toggleIcons();
 });
 
@@ -174,3 +174,9 @@ inputField.addEventListener('input', function (e) {
 
 initTheme();
 toggleIcons();
+
+/*
+
+Debounce will wait to finish, and execute after a certian delay. but, the start time refreshes everytime, you type
+Throttle will execute something, then wait till a dely, then execute again.. It doesnt wait till u finish & it doesnt reset everytime
+*/
