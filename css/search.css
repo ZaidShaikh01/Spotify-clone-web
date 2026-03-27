@@ -12,6 +12,7 @@
   --grey: #1f1f1f;
   --button-background: #f0f0f0;
   --text-color: #a8a8a8;
+  --title:white;
 }
 [data-theme='light'] {
   --black: #caf0f8;
@@ -29,7 +30,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--black);
   line-height: 1.6;
-  color: var(--button-background);
+  color: var(--title);
   scroll-behavior: smooth;
 }
 a {
@@ -112,23 +113,23 @@ img {
   font-family: inherit;
   padding: 2rem 2rem;
   /* background-color: white; */
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--title);
 }
 .search-table-head {
   background-color: transparent;
-  color: var(--text-color);
+  color: var(--title);
   padding: 0.8rem;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--title);
 }
 .search-table-head th {
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--title);
 }
 .search-body td {
   text-align: center;
-  border-left: 1px solid var(--text-color);
+  border-left: 1px solid var(--title);
   /* color: var(--text-color); */
 }
 

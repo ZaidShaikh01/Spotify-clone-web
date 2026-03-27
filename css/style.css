@@ -147,7 +147,7 @@ img {
   font-weight: 400;
 }
 .header .header-search-bar i {
-  color: white;
+  color: var(--title);
 }
 
 .header .header-actions {
