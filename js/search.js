@@ -70,6 +70,19 @@ function showAllEntries() {
     createNewTableItem(songName, author);
   }
 }
+
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    // restarts the timer
+    clearTimeout(timer);
+    // sets the timer & actully implements it on the function
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  };
+}
+
 // serach function
 function search(inputValue) {
   removeAllEntries();
@@ -125,12 +138,6 @@ function onBlur() {
 
 searchBarInput.addEventListener('focus', onFocus);
 searchBarInput.addEventListener('blur', onBlur);
-const inputField = document.querySelector('.header-input');
-
-inputField.addEventListener('input', function () {
-  search(inputField.value);
-  console.log(inputField.value);
-});
 
 // Implementing dark theme
 
@@ -155,5 +162,15 @@ toggleButton.addEventListener('click', () => {
 
   toggleIcons();
 });
+
+const debouncedSearch = debounce(search, 300); // passing parameters
+
+const inputField = document.querySelector('.header-input');
+
+inputField.addEventListener('input', function (e) {
+  debouncedSearch(e.target.value);
+});
+// Calling debounce search
+
 initTheme();
 toggleIcons();
