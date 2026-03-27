@@ -14,11 +14,14 @@
   --text-color: #a8a8a8;
 }
 [data-theme='light'] {
-  --background-dark: #1a1a2e;
-  --black: #f0f0f0;
-  --grey: #4a6fa5;
-  --button-background: #1abc9c;
-  /* Sun icon for light mode toggle */
+  --black: #caf0f8;
+  --background-dark: #90e0ef;
+  --grey: #d4a373;
+  --button-background: #e63946;
+
+  --text-color: #fff;
+  --title: #000;
+  --text-description: #000;
 }
 
 html,
@@ -147,7 +150,12 @@ img {
   outline: none;
   color: var(--text-color);
 }
-
+::placeholder{
+  color: var(--title);
+}
+::-ms-input-placeholder {
+color: blue;
+}
 @media (max-width: 992px) {
   .search-container {
     margin: 15rem 10rem;

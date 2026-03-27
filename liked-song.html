@@ -33,6 +33,7 @@
             viewBox="0 0 512 512"
             width="32px"
             height="32px"
+            class="header-logo-svg"
           >
             <path
               fill="white"
@@ -43,10 +44,11 @@
 
         <!-- Header navigation: Home and search -->
         <div class="header-navigation">
-          <a href="index.html" class="header-home-button">
+          <a class="header-home-button" href="index.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
+              class="home-svg"
               width="20px"
               height="20px"
             >
@@ -63,11 +65,21 @@
             <p class="header-search-placeholder">What do you want to play?</p>
           </a>
         </div>
-        <!-- navbar Actions -->
+        <!-- navbar Right : contains login button and some extra stuff -->
         <div class="header-actions">
-
           <button class="header-theme-toggle">
-            <svg class="header-theme-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px"><path fill="white" d="M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512c68.8 0 131.3-27.2 177.3-71.4 7.3-7 9.4-17.9 5.3-27.1s-13.7-14.9-23.8-14.1c-4.9 .4-9.8 .6-14.8 .6-101.6 0-184-82.4-184-184 0-72.1 41.5-134.6 102.1-164.8 9.1-4.5 14.3-14.3 13.1-24.4S322.6 8.5 312.7 6.3C294.4 2.2 275.4 0 256 0z"/></svg>
+            <svg
+              class="header-theme-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="20px"
+              height="20px"
+            >
+              <path
+                fill="white"
+                d="M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512c68.8 0 131.3-27.2 177.3-71.4 7.3-7 9.4-17.9 5.3-27.1s-13.7-14.9-23.8-14.1c-4.9 .4-9.8 .6-14.8 .6-101.6 0-184-82.4-184-184 0-72.1 41.5-134.6 102.1-164.8 9.1-4.5 14.3-14.3 13.1-24.4S322.6 8.5 312.7 6.3C294.4 2.2 275.4 0 256 0z"
+              />
+            </svg>
           </button>
 
           <div class="premium-cta">
@@ -79,6 +91,7 @@
               viewBox="0 0 448 512"
               width="20px"
               height="20px"
+              class="header-user-svg"
             >
               <path
                 fill="white"
@@ -283,10 +296,7 @@
             <div class="playlist-content-area-hero">
               <!-- Cover image -->
               <div class="playlist-content-area-hero-cover">
-                <img
-                  src="images/liked-songs-300.jpg"
-                  alt="playlistd_image"
-                />
+                <img src="images/liked-songs-300.jpg" alt="playlistd_image" />
               </div>
               <!-- Playlist description -->
               <div class="playlist-content-area-hero-description">
@@ -321,6 +331,7 @@
                 </div>
                 <div class="playlist-content-area-action-buttons">
                   <svg
+                  class="content-shuffle"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                     width="2rem"
@@ -333,6 +344,7 @@
                 </div>
                 <div class="playlist-content-area-action-buttons">
                   <svg
+                  class="content-download"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                     width="2rem"
@@ -349,6 +361,7 @@
                   >list</span
                 >
                 <svg
+                class="content-list"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                   width="2rem"
@@ -371,6 +384,7 @@
                     <th>Date Added</th>
                     <th>
                       <svg
+                      class="table-clock"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
                         width="1.2rem"
@@ -573,6 +587,7 @@
             <ul class="music-player-controls-list">
               <li class="music-player-control-button">
                 <svg
+                  class="music-player-shuffle-svg"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                   width="20px"
@@ -585,6 +600,7 @@
               </li>
               <li class="music-player-control-button">
                 <svg
+                  class="music-backward"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 576 512"
                   width="20px"
@@ -597,6 +613,7 @@
               </li>
               <li class="music-player-control-button">
                 <svg
+                  class="music-stop"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                   width="40px"
@@ -609,6 +626,7 @@
               </li>
               <li class="music-player-control-button">
                 <svg
+                  class="music-forward"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 576 512"
                   width="20px"
@@ -621,6 +639,7 @@
               </li>
               <li class="music-player-control-button">
                 <svg
+                  class="music-repeat"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                   width="20px"
@@ -652,6 +671,7 @@
           <!-- Sound range -->
           <div class="music-player-sound-icon">
             <svg
+              class="music-sound-svg"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
               width="25px"
@@ -678,6 +698,6 @@
       </div>
     </footer>
 
-    <script src="js/script.js" ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
