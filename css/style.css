@@ -447,6 +447,7 @@ img {
   justify-content: center;
 }
 .music-player-progress-bar {
+  cursor: pointer;
   appearance: none;
   width: 35rem;
   height: 0.3rem;

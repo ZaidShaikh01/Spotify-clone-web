@@ -771,18 +771,17 @@
               </li>
             </ul>
             <div class="music-player-progress-container">
-              <p class="music-player-music-time">0</p>
+              <p class="music-player-music-time" id="player-start-time">0</p>
               <input
                 type="range"
                 name="range"
-                id="range"
+                id="music-player-progress-bar"
                 class="music-player-progress-bar"
                 min="0"
-                max="100"
-                step="1"
+                step="0.01"
                 value="0"
               />
-              <p class="music-player-music-time">2:33</p>
+              <p class="music-player-music-time" id="player-end-time">2:33</p>
             </div>
           </div>
         </div>

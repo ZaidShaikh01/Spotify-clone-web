@@ -21,6 +21,9 @@ const volume = document.getElementById('volume-range');
 const audio = document.getElementById('footer-music');
 const playerCover = document.getElementById('music-player-cover');
 const playerSongTitle = document.querySelector('.music-player-song-title');
+const playerProgressBar = document.getElementById('music-player-progress-bar');
+const musicDuration = document.getElementById('player-end-time');
+const musicCurrentTime = document.getElementById('player-start-time');
 let path = window.location.pathname;
 
 // Creating an array of songs
@@ -30,7 +33,7 @@ let songIndex = 4;
 
 // Load song details
 function loadSong(song) {
-  playerSongTitle.innerHTML = song;
+  playerSongTitle.innerHTML = song.toUpperCase();
   playerCover.src = `images/album-cover/${song}.jpg`;
   audio.src = `songs/${song}.mp3`;
 }
@@ -67,6 +70,19 @@ function nextSong() {
   }
   loadSong(songs[songIndex]);
   playSong();
+}
+
+function updateProgress(e) {
+  if (!playerProgressBar.dragging) {
+    playerProgressBar.value = audio.currentTime;
+    const formatted = formateTime(audio.currentTime);
+    musicCurrentTime.innerHTML = `${formatted}`;
+  }
+}
+
+function setProgress(e) {
+  audio.currentTime = playerProgressBar.value;
+  playerProgressBar.dragging = false;
 }
 
 function initTheme() {
@@ -435,6 +451,14 @@ function createNewMusicSection() {
   contentAreaMusicSection.append(musicSection);
   console.log('New Element Added!!');
 }
+function formateTime(duration) {
+  const totalSeconds = Math.floor(duration);
+  const minutes = Math.floor(totalSeconds / 60);
+  const secounds = totalSeconds % 60;
+  // formate with leading zero for secounds
+  const formatted = `${minutes}:${secounds}`;
+  return formatted;
+}
 
 // We can use this like so (this will run runOnScroll at most once per second):
 
@@ -459,7 +483,20 @@ volume.addEventListener('change', () => {
 });
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
-
+audio.addEventListener('timeupdate', updateProgress);
+audio.addEventListener('loadedmetadata', () => {
+  playerProgressBar.max = audio.duration;
+  // Format with leading zero for seconds
+  const formatted = formateTime(audio.duration);
+  musicDuration.innerHTML = `${formatted}`;
+  musicCurrentTime.innerHTML = 0;
+});
+// Allows to add input value and chage the value
+playerProgressBar.addEventListener('input', () => {
+  playerProgressBar.dragging = true; // Mark dragging state
+});
+// Allows to change the value
+playerProgressBar.addEventListener('change', setProgress);
 initTheme();
 toggleIcons();
 createNewMusicSection();
