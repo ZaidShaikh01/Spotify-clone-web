@@ -1,14 +1,4 @@
 const filters = document.querySelector('.content-area-content-filters');
-
-window.addEventListener('scroll', function () {
-  if (window.scrollY > 100) {
-    filters.classList.add('scroll');
-  } else {
-    filters.classList.remove('scroll');
-  }
-});
-
-// Implementing dark theme
 const toggleButton = document.querySelector('.header-theme-toggle');
 const icon = document.querySelector('.header-theme-svg');
 const shuffleButton = document.querySelector('.music-player-shuffle-svg');
@@ -24,10 +14,11 @@ const contentShuffle = document.querySelector('.content-shuffle');
 const contentDownload = document.querySelector('.content-download');
 const contentlist = document.querySelector('.content-list');
 const tableClock = document.querySelector('.table-clock');
-const contentArea = document.querySelector('.content-area');
 const contentAreaMusicSection = document.querySelector(
   '.content-area-music-sections',
 );
+const volume = document.getElementById('volume-range');
+const audio = document.getElementById('footer-music');
 let path = window.location.pathname;
 
 function createNewMusicSection() {
@@ -239,6 +230,24 @@ function createNewMusicSection() {
   console.log('New Element Added!!');
 }
 
+function playSong() {
+  if (audio.paused) {
+    stop.innerHTML = `<path fill="white" d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 192l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32z"/>`;
+    audio.play();
+  } else {
+    stop.innerHTML = `<path
+                    fill="white"
+                    d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
+                  />`;
+    audio.pause();
+  }
+}
+
+stop.addEventListener('click', playSong);
+volume.addEventListener('change', () => {
+  audio.volume = volume.value;
+});
+
 function initTheme() {
   // Check for the themem that is in local storage or use preference
   const savedTheme = localStorage.getItem('theme');
@@ -387,6 +396,8 @@ const throttle = (fn, delay) => {
   // Here's our logic
   return () => {
     if (time + delay - Date.now() <= 0) {
+      // Checks if enough time has passed since the last execution.
+      // time + delay is the earliest allowed next run
       // Run the function we've passed to our throttler,
       // and reset the `time` variable (so we can check again).
       fn();
@@ -397,12 +408,16 @@ const throttle = (fn, delay) => {
 
 // We can use this like so (this will run runOnScroll at most once per second):
 
-contentArea.addEventListener('scroll', throttle(createNewMusicSection, 1000));
+if (path === '/index.html') {
+  const contentArea = document.querySelector('.content-area');
+  contentArea.addEventListener('scroll', throttle(createNewMusicSection, 1000));
+}
 
 toggleButton.addEventListener('click', () => {
   toggleTheme();
   toggleIcons();
 });
+
 initTheme();
 toggleIcons();
 createNewMusicSection();
