@@ -1,4 +1,5 @@
 const filters = document.querySelector('.content-area-content-filters');
+const contentAreaMusic = document.querySelector('.content-area-music-category');
 const toggleButton = document.querySelector('.header-theme-toggle');
 const icon = document.querySelector('.header-theme-svg');
 const shuffleButton = document.querySelector('.music-player-shuffle-svg');
@@ -39,11 +40,22 @@ function loadSong(song) {
 }
 // Play song
 function playSong() {
-  playBtn.innerHTML = `<path fill="white" d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 192l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32z"/>`;
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  if (currentTheme === 'dark') {
+    playBtn.innerHTML = `<path fill="white" d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 192l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32z"/>`;
+  } else {
+    playBtn.innerHTML = `<path fill="#000" d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 192l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32z"/>`;
+  }
   audio.play();
 }
 // Pause song
 function pauseSong() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  if (currentTheme === 'dark') {
+    playBtn.innerHTML = `<path fill="white" d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 192l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32z"/>`;
+  } else {
+    playBtn.innerHTML = `<path fill="#000" d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 192l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128c0-17.7 14.3-32 32-32s32 14.3 32 32z"/>`;
+  }
   playBtn.innerHTML = `<path
                     fill="white"
                     d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
@@ -244,210 +256,7 @@ const throttle = (fn, delay) => {
   };
 };
 function createNewMusicSection() {
-  const musicSection = document.createElement('div');
-  musicSection.classList.add('content-area-music-category');
-  musicSection.innerHTML = `
-                <!-- Content title -->
-                <div class="content-area-section-header">
-                  <h2 class="content-area-section-title">
-                    Popular albums and singles
-                  </h2>
-                  <p class="content-area-section-action">Show All</p>
-                </div>
-                <!-- Lists -->
-
-                <div class="content-area-music-grid">
-                  <!-- Item 1 -->
-                  <a href="playlist.html" class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/album-3.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">Aashique 2</div>
-                    <div class="content-area-music-artist">
-                      Mithoon, Ankit Tiwari, Jeet Gannuali
-                    </div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                  <!-- Item 2 -->
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/album-1.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">Mind Of Mine</div>
-                    <div class="content-area-music-artist">Zayn Malik</div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <!-- Item 3 -->
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/album-4.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">Sanam Teri Kasam</div>
-                    <div class="content-area-music-artist">
-                      Himesh Reshamiya
-                    </div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <!-- Item 4 -->
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/song-1.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">Bargad</div>
-                    <div class="content-area-music-artist">Arpit kala</div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <!-- Item 5 -->
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/song-2.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">
-                      Kal Chaudhavi ki raat thi
-                    </div>
-                    <div class="content-area-music-artist">Jagjit Singh</div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <!-- Item 6 -->
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/song-3.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">
-                      Yeh Jawaani hai deewani
-                    </div>
-                    <div class="content-area-music-artist">Pritam</div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/album-1.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">Mind Of Mine</div>
-                    <div class="content-area-music-artist">Zayn Malik</div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <!-- Item 3 -->
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/album-4.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">Sanam Teri Kasam</div>
-                    <div class="content-area-music-artist">
-                      Himesh Reshamiya
-                    </div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <!-- Item 4 -->
-                  <div class="content-area-music-card">
-                    <div class="content-area-music-cover">
-                      <img src="images/song-1.jpg" alt="" />
-                    </div>
-                    <div class="content-area-music-title">Bargad</div>
-                    <div class="content-area-music-artist">Arpit kala</div>
-                    <div class="content-area-music-overlay">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        width="3rem"
-                      >
-                        <path
-                          fill="#3be477"
-                          d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              `;
+  const musicSection = contentAreaMusic.cloneNode(true);
   contentAreaMusicSection.append(musicSection);
   console.log('New Element Added!!');
 }
@@ -467,38 +276,40 @@ if (path === '/index.html') {
   contentArea.addEventListener('scroll', throttle(createNewMusicSection, 1000));
 }
 
-toggleButton.addEventListener('click', () => {
-  toggleTheme();
+document.addEventListener('DOMContentLoaded', () => {
+  toggleButton.addEventListener('click', () => {
+    toggleTheme();
+    toggleIcons();
+  });
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      playSong();
+    } else {
+      pauseSong();
+    }
+  });
+  volume.addEventListener('change', () => {
+    audio.volume = volume.value;
+  });
+  prevBtn.addEventListener('click', prevSong);
+  nextBtn.addEventListener('click', nextSong);
+  audio.addEventListener('timeupdate', updateProgress);
+  audio.addEventListener('loadedmetadata', () => {
+    playerProgressBar.max = audio.duration;
+    // Format with leading zero for seconds
+    const formatted = formateTime(audio.duration);
+    musicDuration.innerHTML = `${formatted}`;
+    musicCurrentTime.innerHTML = 0;
+  });
+  // Allows to add input value and chage the value
+  playerProgressBar.addEventListener('input', () => {
+    playerProgressBar.dragging = true; // Mark dragging state
+  });
+  // Allows to change the value
+  playerProgressBar.addEventListener('change', setProgress);
+  initTheme();
   toggleIcons();
+  createNewMusicSection();
 });
-playBtn.addEventListener('click', () => {
-  if (audio.paused) {
-    playSong();
-  } else {
-    pauseSong();
-  }
-});
-volume.addEventListener('change', () => {
-  audio.volume = volume.value;
-});
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
-audio.addEventListener('timeupdate', updateProgress);
-audio.addEventListener('loadedmetadata', () => {
-  playerProgressBar.max = audio.duration;
-  // Format with leading zero for seconds
-  const formatted = formateTime(audio.duration);
-  musicDuration.innerHTML = `${formatted}`;
-  musicCurrentTime.innerHTML = 0;
-});
-// Allows to add input value and chage the value
-playerProgressBar.addEventListener('input', () => {
-  playerProgressBar.dragging = true; // Mark dragging state
-});
-// Allows to change the value
-playerProgressBar.addEventListener('change', setProgress);
-initTheme();
-toggleIcons();
-createNewMusicSection();
 
 console.log(path);
